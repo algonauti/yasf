@@ -5,6 +5,7 @@ def read_fixture(path)
 end
 
 FAKE_URLS = { 
+  "http://www.fakeurl.com/basic_example" => "basic_example_response"
 }
 
 begin
