@@ -30,13 +30,11 @@ Or install it yourself as:
         result :rows
     end
 
-And using the scraper:
+###And using the scraper:
 
-  results = scraper.extract_from(html)
-
-  # First result:
-  result = results.first
-  puts result.title
+    results = scraper.extract_from(html)
+    result = results.first
+    puts result.title
 
 ## Contributing
 
