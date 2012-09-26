@@ -1,3 +1,5 @@
+require "open-uri"
+
 require "yasf/version"
 require "yasf/scraper"
 
