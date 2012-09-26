@@ -33,6 +33,18 @@ describe Yasf do
     title.should be_eql("Title 1")
   end
 
+  it "scrape basic example content with not found selector should be return nil" do
+    url = "http://www.fakeurl.com/basic_example"
+
+    scraper = Yasf::define do
+      scrape :title, "h1.not_found_element", :title => :text
+      result :title
+    end
+
+    title = scraper.extract_from(url)
+    title.should be_eql(nil)
+  end
+
   it "scrape medium example content and result should be stored in array" do
     url = "http://www.fakeurl.com/medium_example"
     scraper = Yasf::define do
