@@ -31,8 +31,8 @@ Or install it yourself as:
     end
 
 ###And using the scraper:
-
-    results = scraper.extract_from(html)
+    url = "http://local.domain"
+    results = scraper.extract_from(url)
     result = results.first
     puts result.title
 
