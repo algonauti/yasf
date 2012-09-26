@@ -17,8 +17,26 @@ Or install it yourself as:
 
     $ gem install yasf
 
-## Usage
+## Usage  
+    row_scraper = Yasf.define do
+        scrape "h1.title", :title => :text
+        scrape "a.brand",  :brand => :text, :brand_link => :href
 
+        result :title, :brand, :brand_link
+    end
+
+    scraper = Yasf.define do
+        scrape "table.companies tr.company", :'rows[]' => row_scraper
+        result :rows
+    end
+
+And using the scraper:
+
+  results = scraper.extract_from(html)
+
+  # First result:
+  result = results.first
+  puts result.title
 
 ## Contributing
 
