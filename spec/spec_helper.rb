@@ -7,7 +7,8 @@ end
 FAKE_URLS = { 
   "http://www.fakeurl.com/basic_example" => "basic_example_response",
   "http://www.fakeurl.com/medium_example" => "medium_example_response",
-  "http://www.fakeurl.com/advanced_example" => "advanced_example_response"
+  "http://www.fakeurl.com/advanced_example" => "advanced_example_response",
+  "http://thepiratebay.se/browse/101" => "thepiratebay_response.html"
 }
 
 begin

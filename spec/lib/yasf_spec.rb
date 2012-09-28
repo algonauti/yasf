@@ -76,4 +76,25 @@ describe Yasf do
     titles[3].title.should be_eql("Title 4")
   end
 
+  it "scrape thepiratebay.se should be to have more results" do
+     url = "http://thepiratebay.se/browse/101"
+
+     album = Yasf::define do
+       scrape :name, "td div.detName a", :name => :text
+       scrape :desc, "td font.detDesc", :desc => :text
+       
+       result :name, :desc
+     end
+          
+     scraper = Yasf::define do
+       scrape :albums, "table#searchResult tbody tr", :'albums[]' => album
+
+       result :albums
+     end
+     albums = scraper.extract_from(url)
+     albums.should be_is_a(Array)
+     albums.size.should be_equal(31)
+     albums[29].name.should be_eql("Maurice Ravel Complete Piano Works 2CD")
+  end
+  
 end
