@@ -90,33 +90,23 @@ module Yasf
 
       # Returns a Proc that will set the extract value in the object.
       def extract_value_to(target)
-        target = target.to_s
-        if target[-2..-1] == "[]" or (@arrays && array = @arrays.include?(target.to_sym))
-          target = target[0...-2] unless array
-          # Create an attribute accessor is not already defined.
-          begin
-            self.instance_method(target)
-          rescue NameError
-            attr_accessor target
-          end
-          reader = "#{target}".to_sym
-          writer = "#{target}=".to_sym
+        method_name = target.to_s.tr_s("[]", "")
+
+        attr_accessor method_name
+
+        if target.to_s.end_with? "[]"
+          reader = "#{method_name}".to_sym
+          writer = "#{method_name}=".to_sym
           return lambda do |object, value|
             array = object.send(reader)
             object.send(writer, array = []) unless array
             array << value
           end
         else
-          # Create an attribute accessor is not already defined.
-          begin
-            self.instance_method(target)
-          rescue NameError
-            instance = "@#{target}".to_sym
-            attr_accessor target
-          end
-          reader = "#{target}=".to_sym
+          reader = "#{method_name}=".to_sym
           return lambda { |object, value| object.send(reader, value) }
         end
+
       end
 
     end # end self
