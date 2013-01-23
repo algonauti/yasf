@@ -1,7 +1,9 @@
 require "nokogiri"
+require "httparty"
 
 module Yasf
   class Scraper
+    include HTTParty
 
     class << self
 
@@ -116,7 +118,7 @@ module Yasf
       @options = options || {}
       case source
       when String
-        @document = Nokogiri::HTML(open(source))
+        @document = Nokogiri::HTML(self.class.get(source,@options).body)
       when Nokogiri::XML::Element
         @document = source
       else

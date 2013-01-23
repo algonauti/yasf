@@ -17,9 +17,10 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency('nokogiri', '1.5.5')
-  
+  s.add_dependency('httparty', '0.10.0')
+
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'fakeweb'
-    
+
 end
