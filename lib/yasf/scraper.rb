@@ -129,6 +129,10 @@ module Yasf
       @document
     end
 
+    # Called by #scrape before calling #result typically used to run post-processing steps
+    def collect()
+    end
+
     # Scrapes the document and returns the result.
     def extract
       rules = self.class.rules.clone
@@ -137,6 +141,7 @@ module Yasf
           extractor.bind(self).call(element)
         end
       end
+      collect
       return result
     end
 
