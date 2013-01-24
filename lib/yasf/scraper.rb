@@ -119,7 +119,7 @@ module Yasf
       case source
       when String
         @document = Nokogiri::HTML(self.class.get(source,@options).body)
-      when Nokogiri::XML::Element
+      when Nokogiri::XML::Element, Nokogiri::HTML::Document
         @document = source
       else
         raise ArgumentError, "source not recognized"
