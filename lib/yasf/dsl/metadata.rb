@@ -21,11 +21,11 @@ module Yasf
       end
 
       def parse(context)
-        results = {}
-        @properties.each do |property|
-          results[property.name] = property.parse(context)
+        HashWithIndifferentAccess.new.tap do |results|
+          @properties.each do |property|
+            results[property.name] = property.parse(context) if property.is_a? ::Yasf::Parseable
+          end
         end
-        results
       end
 
     end

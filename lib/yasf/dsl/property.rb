@@ -2,6 +2,8 @@ module Yasf
   module DSL
 
     class Property
+      include ::Yasf::Parseable
+
       attr_reader :name
 
       def initialize(name, *args, &block)
@@ -10,12 +12,8 @@ module Yasf
         @callback = block
       end
 
-      def selector
-        @options[:xpath] || nil
-      end
-
       def parse(context)
-        data = context.xpath(selector)
+        data = search(context)
         if @callback
           @callback.call(data)
         else

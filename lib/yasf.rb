@@ -6,6 +6,7 @@ require "yasf/version"
 module Yasf
   autoload :Crawler, 'yasf/crawler'
   autoload :Parser, 'yasf/parser'
+  autoload :Parseable, 'yasf/parseable'
 
   module DSL
     autoload :Property, 'yasf/dsl/property'

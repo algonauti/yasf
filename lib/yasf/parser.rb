@@ -11,12 +11,12 @@ module Yasf
     end
 
     def parse
-      @metadata.parse(context)
+      @metadata.parse(document)
     end
 
     private
 
-    def context
+    def document
       Nokogiri::HTML(
         RestClient.get(@metadata.url)
       )
