@@ -7,11 +7,15 @@ module Yasf
     end
 
     def selector
-      options[:xpath] || options[:css] || nil
+      options[parser]
     end
 
-    def search(context)
-      context.xpath(selector)
+    def scan(context)
+      context.send(parser, selector)
+    end
+
+    def parser
+      options[:xpath] ? :xpath : :css
     end
 
     def parse(context)
