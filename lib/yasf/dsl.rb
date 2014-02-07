@@ -41,11 +41,11 @@ module Yasf
       def parse(context)
         raw_data = scan(context)
         if fields.empty?
-          @callback.nil? ? raw_data.text : @callback.call(raw_data)
+          @callback.call(raw_data) rescue raw_data.text
         else
-          OpenStruct.new.tap do |result|
+          OpenStruct.new.tap do |results|
             fields.each do |key, field_proc|
-              result.send "#{key}=", raw_data.present? ? field_proc.call(raw_data) : nil
+              results.send "#{key}=", raw_data.present? ? field_proc.call(raw_data) : nil
             end
           end
         end
