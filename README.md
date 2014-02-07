@@ -20,27 +20,23 @@ Yasf.crawl do
   property :page_title, xpath: '/html/head/title'
 
   collection :books, xpath: '//*[@id="content"]/div/article' do
-    property :title, xpath: 'header/h2/a/@title'
+
+    property :title, xpath: 'header/h2/a/@title'do |data|
+      data.to_s.upcase
+    end
+
     property :description, xpath: 'div/p'
-    property :download, xpath: 'div/p/a/@href'
+
+    property :download, xpath: 'div/p/a' do
+      field :href
+      field :title
+    end
   end
 end
 ```
 
-###### The code above is gonna return the following hash:
+###### The code above is gonna return the following OpenStruct:
 
-```ruby
-{
-   "page_title" => "Home | Wow! eBook",
-   "books" => [
-      {
-         "title" => "Android Application Security Essentials",
-         "description" => "In today’s techno-savvy world, more and more parts of our lives are going digital...",
-         "download" => "http://www.wowebook.com/book/android-application-security-essentials/#more-29745"
-      }
-   ]
-}
-```
 
 ### This is just a sneak peek of what Yasf can do. For the complete documentation, please check the links below:
 
