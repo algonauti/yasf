@@ -14,15 +14,29 @@ describe Yasf do
         property :page_title, xpath: '/html/head/title'
 
         collection :books, xpath: '//*[@id="content"]/div/article' do
-          property :title, xpath: 'header/h2/a/@title'
+
+          property :title, xpath: 'header/h2/a/@title'do |data|
+            data.to_s.upcase
+          end
+
           property :description, xpath: 'div/p'
-          property :download, xpath: 'div/p/a/@href'
+
+          property :download, xpath: 'div/p/a' do
+            field :href
+            field :title
+          end
+
         end
 
       end
     end
 
-    it { @scrape[:books].count.should be(6) }
+    it "all values must be correct" do
+      @scrape.page_title.should be_eql('Home | Wow! eBook')
+      @scrape.books.count.should be(6)
+      @scrape.books.last.title.should be_eql('LEARNING ANDROID, 2ND EDITION')
+    end
+
   end
 
 end
