@@ -12,14 +12,24 @@ module Yasf
       Yasf::Parser.new(metadata).parse
     end
 
-    def method_missing(method, *args, &block)
-      metadata.send method, *args, &block
+    def metadata
+      self.class.send(:metadata)
     end
 
-    private
+    def method_missing(method, *args, &block)
+      self.class.send method, *args, &block
+    end
 
-    def metadata
-      @metadata ||= DSL::Metadata.new
+    module ClassMethods
+      def method_missing(method, *args, &block)
+        metadata.send method, *args, &block
+      end
+
+      private
+
+      def metadata
+        @metadata ||= DSL::Metadata.new
+      end
     end
 
   end
