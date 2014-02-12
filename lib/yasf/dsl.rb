@@ -40,11 +40,11 @@ module Yasf
 
       def parse(context)
         raw_data = scan(context)
-        if fields.empty?
+        if fields_list.empty?
           @callback.call(raw_data) rescue raw_data.text
         else
           OpenStruct.new.tap do |results|
-            fields.each do |key, field_proc|
+            fields_list.each do |key, field_proc|
               results.send "#{key}=", raw_data.present? ? field_proc.call(raw_data) : nil
             end
           end
@@ -52,14 +52,20 @@ module Yasf
       end
 
       def field(name)
-        fields[name] = lambda do |node_set|
+        fields_list[name] = lambda do |node_set|
           node_set.attribute(name.to_s).to_s
+        end
+      end
+
+      def fields(*names)
+        names.each do |name|
+          field name
         end
       end
 
       private
 
-      def fields
+      def fields_list
         @fields ||= {}
         @fields
       end

@@ -14,9 +14,9 @@ class Fakecrawler
     property :description, xpath: 'div/p'
 
     property :download, xpath: 'div/p/a' do
-      field :href
-      field :title
+      fields :href, :title
     end
+
   end
 
 end
