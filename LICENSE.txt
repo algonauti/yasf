@@ -1,4 +1,4 @@
-Copyright (c) 2014 Salvatore Ferrucci
+Copyright (c) 2014 Algonauti
 
 MIT License
 
