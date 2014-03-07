@@ -12,33 +12,35 @@ Web scraper
 The simplest way to use yasf is by calling ``Yasf.crawl`` and passing it a block:
 
 ```ruby
-require 'yasf'
 
-result = Yasf.crawl do
-  base_url "http://www.wowebook.com"
+  require 'yasf'
 
-  property :page_title, xpath: '/html/head/title'
+  result = Yasf.crawl do
+    base_url "http://www.wowebook.com"
 
-  collection :books, xpath: '//*[@id="content"]/div/article' do
+    property :page_title, xpath: '/html/head/title'
 
-    property :title, xpath: 'header/h2/a/@title'do |data|
-      data.to_s.upcase
-    end
+    collection :books, xpath: '//*[@id="content"]/div/article' do
 
-    property :description, xpath: 'div/p'
+      property :title, xpath: 'header/h2/a/@title'do |data|
+        data.to_s.upcase
+      end
 
-    property :download, xpath: 'div/p/a' do
-      field :href
-      field :title
+      property :description, xpath: 'div/p'
+
+      property :download, xpath: 'div/p/a' do
+        field :href
+        field :title
+      end
     end
   end
-end
 
-puts result.page_title
+  puts result.page_title
 
-result.books.each do |book|
-  puts "Book: #{book.title} -> #{book.description}"
-end
+  result.books.each do |book|
+    puts "Book: #{book.title} -> #{book.description}"
+  end
+
 ```
 
 ### [Wiki](http://github.com/algonauti/yasf/wiki)
