@@ -33,11 +33,12 @@ result = Yasf.crawl do
     end
   end
 end
-```
-###### The code above is gonna return the following OpenStruct:
 
-```ruby
-  puts result.inspect
+puts result.page_title
+
+result.books.each do |book|
+  puts "Book: #{book.title} -> #{book.description}"
+end
 ```
 
 ### [Wiki](http://github.com/algonauti/yasf/wiki)
