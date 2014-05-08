@@ -43,7 +43,7 @@ module Yasf
         if fields_list.empty?
           @callback.call(raw_data) rescue raw_data.text
         else
-          OpenStruct.new.tap do |results|
+          ActiveSupport::OrderedOptions.new.tap do |results|
             fields_list.each do |key, field_proc|
               results.send "#{key}=", raw_data.present? ? field_proc.call(raw_data) : nil
             end
@@ -78,7 +78,7 @@ module Yasf
       def parse(context)
         results = Array.new
         scan(context).each do |data|
-          OpenStruct.new.tap do |result|
+          ActiveSupport::OrderedOptions.new.tap do |result|
             properties.each do |property|
               result.send "#{property.name}=", property.parse(data)
             end
@@ -90,7 +90,7 @@ module Yasf
 
     end
 
-    class Metadata < OpenStruct
+    class Metadata < ActiveSupport::OrderedOptions
       include Language
 
       attr_reader :url
