@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   # Runtime
   spec.add_runtime_dependency "rest-client", '~> 1.6.7'
   spec.add_runtime_dependency "nokogiri", '~> 1.6.1'
-  spec.add_runtime_dependency "activesupport", '~> 4.0.2'
+  spec.add_runtime_dependency "activesupport", '~> 4'
 
   # Developmenet
   spec.add_development_dependency "bundler", "~> 1.4"
