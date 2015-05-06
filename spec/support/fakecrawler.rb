@@ -7,7 +7,7 @@ class Fakecrawler
 
   collection :books, xpath: '//*[@id="content"]/div/article' do
 
-    property :title, xpath: 'header/h2/a/@title'do |data|
+    property :title, xpath: 'header/h2/a/@title' do |data|
       data.to_s.upcase
     end
 
