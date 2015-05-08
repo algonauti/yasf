@@ -2,21 +2,20 @@ require 'spec_helper'
 
 describe Yasf do
 
-  describe "Respond to" do
+  describe "Respond to instance methods" do
     it { expect(Yasf).to respond_to(:crawl) }
   end
 
-  describe '#scrape' do
-    before do
-      @crawler = Fakecrawler.new.crawl
-    end
+  describe '#scrape', vcr: true do
 
-    it "all values must be correct" do
-      expect(@crawler.page_title).to eql('Home | Wow! eBook')
-      expect(@crawler.books.count).to be(6)
-      expect(@crawler.books.last.title).to eql('LEARNING ANDROID, 2ND EDITION')
+    context 'wowebook' do
+      Given(:scraper) { Fakecrawler.new }
+      When(:result) { scraper.crawl }
+
+      Then { expect(result.page_title).to eql('Home | Wow! eBook') }
+      And { expect(result.books.count).to be(6) }
+      And { expect(result.books.last.title).to eql('FIVE STARS: PUTTING ONLINE REVIEWS TO WORK FOR YOUR BUSINESS') }
     end
 
   end
-
 end

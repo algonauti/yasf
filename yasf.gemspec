@@ -29,6 +29,8 @@ Gem::Specification.new do |spec|
 
   # Test
   spec.add_development_dependency 'rspec', '~> 3.2'
-  spec.add_development_dependency 'mocha', '~> 1.1'
-  spec.add_development_dependency 'fakeweb', '~> 1.3'
+  spec.add_development_dependency 'rspec-given', '~> 3.7'
+  spec.add_development_dependency 'webmock'
+  spec.add_development_dependency 'vcr'
+  spec.add_development_dependency 'dotenv'
 end
