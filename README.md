@@ -1,4 +1,5 @@
 # Yasf
+[![Build Status](https://travis-ci.org/algonauti/yasf.svg?branch=master)](https://travis-ci.org/algonauti/yasf)
 
 Web scraper
 
