@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Yasf do
 
   describe "Respond to" do
-    it { Yasf.should respond_to(:crawl) }
+    it { expect(Yasf).to respond_to(:crawl) }
   end
 
   describe '#scrape' do
@@ -12,9 +12,9 @@ describe Yasf do
     end
 
     it "all values must be correct" do
-      @crawler.page_title.should be_eql('Home | Wow! eBook')
-      @crawler.books.count.should be(6)
-      @crawler.books.last.title.should be_eql('LEARNING ANDROID, 2ND EDITION')
+      expect(@crawler.page_title).to eql('Home | Wow! eBook')
+      expect(@crawler.books.count).to be(6)
+      expect(@crawler.books.last.title).to eql('LEARNING ANDROID, 2ND EDITION')
     end
 
   end

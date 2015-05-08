@@ -8,6 +8,6 @@ describe Yasf::Crawler do
   end
 
   describe "Respond to instance methods" do
-    it { @instance.should respond_to(:crawl) }
+    it { expect(@instance).to respond_to(:crawl) }
   end
 end
