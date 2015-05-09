@@ -1,13 +1,14 @@
 require 'active_support/all'
 
-require "yasf/version"
+require 'yasf/version'
+require 'yasf/capybara'
 
 module Yasf
-  autoload :Crawler, 'yasf/crawler'
-  autoload :Parser, 'yasf/parser'
-  autoload :Parseable, 'yasf/parseable'
-  autoload :DSL,  'yasf/dsl'
-
+  autoload :Crawler,    'yasf/crawler'
+  autoload :DSL,        'yasf/dsl'
+  autoload :Parser,     'yasf/parser'
+  autoload :Parseable,  'yasf/parseable'
+  autoload :Session,    'yasf/session'
 
   class << self
     def crawl(&block)

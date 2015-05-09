@@ -1,4 +1,3 @@
-require 'rest_client'
 require 'nokogiri'
 
 module Yasf
@@ -18,7 +17,7 @@ module Yasf
 
     def document
       Nokogiri::HTML(
-        RestClient.get(@metadata.url)
+        Session.new(@metadata.url).html
       )
     end
 

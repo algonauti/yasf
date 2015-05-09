@@ -19,7 +19,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Runtime
-  spec.add_runtime_dependency 'rest-client', '~> 1.8'
+  spec.add_runtime_dependency 'capybara', '~> 2.4'
+  spec.add_runtime_dependency 'poltergeist', '~> 1.6'
+
   spec.add_runtime_dependency 'nokogiri', '~> 1.6'
   spec.add_runtime_dependency 'activesupport', '~> 4.2'
 
