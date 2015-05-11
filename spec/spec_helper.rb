@@ -3,7 +3,6 @@ require 'bundler/setup'
 require 'dotenv'
 require 'rspec/given'
 require 'rspec/mocks'
-require 'webmock/rspec'
 
 Dotenv.load('.env')
 

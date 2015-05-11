@@ -6,7 +6,7 @@ describe Yasf do
     it { expect(Yasf).to respond_to(:crawl) }
   end
 
-  describe '#scrape', vcr: true do
+  describe '#scrape' do
 
     context 'wowebook' do
       Given(:scraper) { Fakecrawler.new }
