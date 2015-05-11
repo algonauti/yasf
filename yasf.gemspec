@@ -33,5 +33,6 @@ Gem::Specification.new do |spec|
   # Test
   spec.add_development_dependency 'rspec', '~> 3.2'
   spec.add_development_dependency 'rspec-given', '~> 3.7'
+  spec.add_development_dependency 'puffing-billy'
   spec.add_development_dependency 'dotenv'
 end
