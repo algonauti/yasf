@@ -3,6 +3,8 @@ Billy.configure do |c|
   c.persist_cache = true
 end
 
+Billy.config.logger.level = Logger::ERROR
+
 Capybara.default_driver = :poltergeist_billy
 
 # Monkey patch for eventmachine_httpserver
