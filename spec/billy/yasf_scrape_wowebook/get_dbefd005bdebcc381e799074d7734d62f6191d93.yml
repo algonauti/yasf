@@ -1,0 +1,15 @@
+---
+:scope: 
+:url: http://go.oclasrv.com/apu.php?zoneid=24125
+:body: ''
+:status: 302
+:method: get
+:headers:
+  Server: nginx
+  Date: Mon, 11 May 2015 14:46:04 GMT
+  Content-Type: text/html
+  Content-Length: '154'
+  Connection: close
+  Location: http://onclickads.net/apu.php?zoneid=24125
+:content: "<html>\r\n<head><title>302 Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>302
+  Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"

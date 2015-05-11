@@ -9,6 +9,14 @@ describe Yasf do
   describe '#scrape' do
 
     context 'wowebook' do
+
+      before do
+        Billy.configure do |c|
+          c.cache_path = 'spec/billy/yasf_scrape_wowebook'
+          c.merge_cached_responses_whitelist = Fakecrawler::UNIMPORTANT_DOMAINS
+        end
+      end
+
       Given(:scraper) { Fakecrawler.new }
       When(:result) { scraper.crawl }
 
@@ -18,4 +26,5 @@ describe Yasf do
     end
 
   end
+
 end
