@@ -6,7 +6,7 @@ describe Yasf do
     it { expect(Yasf).to respond_to(:crawl) }
   end
 
-  describe '#scrape' do
+  describe '#scrape', vcr: true do
 
     context 'wowebook' do
 
