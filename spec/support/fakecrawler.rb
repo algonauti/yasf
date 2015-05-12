@@ -19,25 +19,5 @@ class Fakecrawler
 
   end
 
-  UNIMPORTANT_DOMAINS = [
-    /gravatar\.com/,
-    /directrev\.com/,
-    /doubleclick\.net/,
-    /google\.com/,
-    /googlesyndication\.com/,
-    /google-analytics\.com/,
-    /gstatic\.com/,
-    /akamaihd\.net/,
-    /msecnd\.net/,
-    /facebook\.com/,
-    /facebook\.net/,
-    /fbcdn\.net/,
-    /twitter\.com/,
-    /wp\.com/,
-    /oclasrv\.com/,
-    /feedburner\.com/,
-    /onclickads\.net/
-  ]
-
 end
 
