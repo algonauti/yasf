@@ -5,6 +5,27 @@ end
 
 Billy.config.logger.level = Logger::ERROR
 
+class NullLogger
+  def puts(msg)
+  end
+end
+
+Capybara.register_driver :poltergeist_billy do |app|
+  options = {
+    js_errors: false,
+    debug: false,
+    inspector: false,
+    timeout: 20,
+    logger: NullLogger.new,
+    phantomjs_logger: NullLogger.new,
+    phantomjs_options: [
+      '--ignore-ssl-errors=yes',
+      "--proxy=#{Billy.proxy.host}:#{Billy.proxy.port}"
+    ]
+  }
+  Capybara::Poltergeist::Driver.new(app, options)
+end
+
 Capybara.default_driver = :poltergeist_billy
 
 # Monkey patch for eventmachine_httpserver
