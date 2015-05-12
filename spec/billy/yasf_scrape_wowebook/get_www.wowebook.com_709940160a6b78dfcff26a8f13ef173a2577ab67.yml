@@ -1,0 +1,59 @@
+---
+:scope: 
+:url: http://www.wowebook.com/wp-content/themes/wowebookv2/css/minimal-skin.css
+:body: ''
+:status: 200
+:method: get
+:headers:
+  Date: Mon, 11 May 2015 14:46:01 GMT
+  Content-Type: text/css
+  Connection: close
+  Last-Modified: Wed, 19 Feb 2014 12:09:10 GMT
+  Cache-Control: public, max-age=2592000
+  Expires: Wed, 10 Jun 2015 14:46:01 GMT
+  Vary: Accept-Encoding
+  CF-Cache-Status: HIT
+  Server: cloudflare-nginx
+  CF-RAY: 1e4eabc45f77148b-AMS
+:content: "#wrap_all{}#top .bg-logo a{background-image:url(../images/skin-minimal/logo.png);background-repeat:no-repeat;}#header{color:#fff;background:#333;}#header
+  .main_menu .menu ul li a{color:#aaa;}#breadcrumb_wrapper .breadcrumb{background:none
+  repeat scroll 0 0 #FFF;color:#555;}#breadcrumb_wrapper a{color:#999;}.main_menu{border:1px
+  solid #eee;border-top:none;}.avia_mega_div{}.main_menu .avia_mega,.main_menu .avia_mega_div
+  ul{background:#fff;}.main_menu .avia_mega>li>a{text-transform:uppercase;}.main_menu
+  .avia_mega a{color:#555;}.main_menu .avia_mega ul{color:#777;}#top .main_menu .avia_mega
+  div ul a:hover{background:transparent;}#top .main_menu .avia_mega ul ul li,#top
+  .main_menu .avia_mega>li>ul li{color:#777;background-image:url(../images/skin-minimal/menu_arrow.png);background-position:-70px
+  -72px;background-repeat:no-repeat;}#top.MSIE7 .main_menu .avia_mega .avia_mega_div>ul>li{background-position:-170px
+  -172px;}#top .main_menu .avia_mega>li>ul li{background-position:-61px -69px;}#top
+  .main_menu .avia_mega div ul ul ul li{background:#888 url(../images/skin-minimal/menu_arrow.png)
+  -70px -72px no-repeat;}.main_menu .dropdown_available{background:transparent url(../images/skin-minimal/menu-arrow-down.png)
+  center center no-repeat;}#wrap_all,#main,.main_menu .avia_mega_div,div .main_menu
+  .avia_mega>li>ul,div .main_menu .avia_mega>li>ul ul,.main_menu .avia_mega>li:hover>a,#top
+  .main_menu .avia_mega>.current_page_item>a{background:#f8f8f8;}#socket{background:#111;}#socket
+  a{color:#aaa;}#socket a:hover{color:#fff;text-decoration:underline;}.social_bookmarks
+  .feed a{background:transparent url(../images/skin-minimal/icons-social-rss.png)
+  0 0 no-repeat;}.social_bookmarks .facebook a{background:transparent url(../images/skin-minimal/icons-social-fb.png)
+  0 0 no-repeat;}.social_bookmarks .twitter a{background:transparent url(../images/skin-minimal/icons-social-twitter.png)
+  0 0 no-repeat;}.social_bookmarks .search_site a{background:transparent url(../images/skin-minimal/icons-social-search.html)
+  0 0 no-repeat;}.tagcloud a{border:1px solid #e1e1e1;background:#fff;}.tagcloud a:hover{background:#d2691e;text-decoration:none;}input,textarea{color:#777;}#s{color:#777;background:transparent;}#header
+  #searchform{background:#fff;}#top #searchsubmit{background:url(../images/skin-minimal/icon-search.png)
+  no-repeat scroll center center transparent;}#top #searchsubmit:hover{background:url(../images/skin-minimal/icon-search.png)
+  no-repeat scroll center center #f8f8f8;}::-moz-selection{background-color:#222222;}::-webkit-selection{background-color:#222222;}::selection{background-color:#222222;}::-moz-selection{color:#fff;}::-webkit-selection{color:#fff;}::selection{color:#fff;}div
+  .callout .big_button{border-color:#333;}a,h4.teaser_text,.entry-content h1,.entry-content
+  h2,#top .pagination a:hover,#top .tweets a{color:#222;}#top #footer a,#top #socket
+  a,#footer .widget_archive ul,#footer .widget_categories ul,#footer .widget_pages
+  ul,#footer .widget_links ul,#footer .widget_meta ul,#footer .widget_nav_menu ul,#top
+  .sub_menu li{border-color:#555;}#top .button:hover,#top #submit:hover{background-color:#444;}#top
+  .main_menu .menu .current_page_item a strong{color:#444;}html,body{background-color:#e4e6e7;}.button,#submit,.dropcap2,#header,#footer,#socket,div
+  #footer h1,div #footer h2,div #footer h3,div #footer h4,div #footer h5,div #footer
+  h6,div #footer h1 a,div #footer h2 a,div #footer h3 a,div #footer h4 a,div #footer
+  h5 a,div #footer h6 a,#top .sub_menu a,a.button,.button a:hover,.button:hover,div
+  .widget_layered_nav ul li.chosen a,.widget_layered_nav ul .chosen small.count,#main
+  table th,div .quantity input.minus:hover,div .quantity input.plus:hover,#top #footer,#top
+  #footer span,#top #footer div,#top #footer p,#top #footer a,#top #socket a{color:#fff;}#header,#footer,.dropcap2,div
+  .callout .big_button,#top .main_menu .avia_mega ul ul li,#top .main_menu .avia_mega>li>ul
+  li,.thumbnail_container:hover,div .widget_layered_nav ul li.chosen,#main table th,div
+  .quantity input.minus:hover,div .quantity input.plus:hover,a.remove:hover,#top #footer,#top
+  #footer span,#top #footer div,#top #footer p,#top #footer a{background-color:#333;}#socket,div
+  .callout .big_button:hover,#top .button,#top #submit{background-color:#222;}html,body{background-color:#000;background-image:url(../images/bg/bg1.jpg);background-position:top
+  center;background-repeat:no-repeat;background-attachment:fixed;}#header{background-color:transparent;}"

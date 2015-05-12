@@ -6,7 +6,7 @@ module Yasf
     end
 
     def html
-      session = Capybara::Session.new(:poltergeist)
+      session = Capybara::Session.new(Capybara.default_driver)
       session.visit @url
       session.html
     end
