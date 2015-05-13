@@ -41,7 +41,9 @@ module Yasf
       def parse(context)
         raw_data = scan(context)
         if fields_list.empty?
-          @callback.present? ? @callback.call(raw_data) : raw_data.try(:text)
+          result = @callback.present? ? @callback.call(raw_data) : raw_data.try(:text)
+          result.try(:strip!) if strip?
+          result
         else
           ActiveSupport::OrderedOptions.new.tap do |results|
             fields_list.each do |key, field_proc|

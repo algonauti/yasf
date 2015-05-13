@@ -10,6 +10,10 @@ module Yasf
       options[parser]
     end
 
+    def strip?
+      options[:strip]
+    end
+
     def scan(context)
       context.send(parser, selector)
     end
