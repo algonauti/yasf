@@ -1,7 +1,7 @@
 class Fakecrawler
   include Yasf::Crawler
 
-  property :page_title, xpath: '/html/head/title'
+  property :page_title, xpath: '/html/head/title', strip: true
 
   collection :books, xpath: '//*[@id="content"]/div/article' do
 
@@ -9,7 +9,7 @@ class Fakecrawler
       data.to_s.upcase
     end
 
-    property :description, xpath: 'div/p'
+    property :description, xpath: 'div/p', strip: false
 
     property :download, xpath: 'div/p/a' do
       fields :href, :title
