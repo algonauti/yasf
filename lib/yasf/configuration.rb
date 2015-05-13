@@ -2,7 +2,8 @@ module Yasf
   class Configuration
     include ActiveSupport::Configurable
 
-    config_accessor :proxy
+    config_accessor :proxy_host
+    config_accessor :proxy_port
     config_accessor :timeout
 
     def poltergeist
@@ -10,19 +11,22 @@ module Yasf
         js_errors: false,
         debug: false,
         inspector: false,
-        timeout: 20,
+        timeout: timeout || 20,
         logger: NullLogger.new,
         phantomjs_logger: NullLogger.new
       }
       default_options.merge!(
         phantomjs_options: [
           '--ignore-ssl-errors=yes',
-          "--proxy=#{proxy}"
+          "--proxy=#{proxy_host}:#{proxy_port}"
         ]
-      ) if proxy
+      ) if proxy?
       default_options
     end
 
+    def proxy?
+      proxy_host and proxy_port
+    end
 
     private
 
