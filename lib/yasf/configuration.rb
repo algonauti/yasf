@@ -12,23 +12,14 @@ module Yasf
         js_errors: false,
         debug: false,
         inspector: false,
-        timeout: timeout || 20
+        timeout: timeout || 20,
+        phantomjs_options: phantomjs_options
       }
 
       options.merge!(
         logger: NullLogger.new,
         phantomjs_logger: NullLogger.new
       ) unless debug?
-
-      options.merge!(
-        phantomjs_options: [
-          '--ignore-ssl-errors=yes',
-          "--proxy=#{proxy_host}:#{proxy_port}",
-          '--proxy-type=http',
-          '--web-security=no',
-          '--load-images=false'
-        ]
-      ) if proxy?
 
       return options
     end
@@ -42,6 +33,21 @@ module Yasf
     end
 
     private
+
+    def phantomjs_options
+      options = [
+        '--ignore-ssl-errors=yes',
+        '--web-security=no',
+        '--load-images=false'
+      ]
+
+      options + [
+        "--proxy=#{proxy_host}:#{proxy_port}",
+        '--proxy-type=http'
+      ] if proxy?
+
+      options
+    end
 
     class NullLogger
       def puts(msg)
