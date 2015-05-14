@@ -18,7 +18,9 @@ module Yasf
       default_options.merge!(
         phantomjs_options: [
           '--ignore-ssl-errors=yes',
-          "--proxy=#{proxy_host}:#{proxy_port}"
+          "--proxy=#{proxy_host}:#{proxy_port}",
+          '--proxy-type=http',
+          '--web-security=no'
         ]
       ) if proxy?
       default_options
