@@ -20,7 +20,8 @@ module Yasf
           '--ignore-ssl-errors=yes',
           "--proxy=#{proxy_host}:#{proxy_port}",
           '--proxy-type=http',
-          '--web-security=no'
+          '--web-security=no',
+          '--load-images=false'
         ]
       ) if proxy?
       default_options
