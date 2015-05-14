@@ -12,7 +12,7 @@ module Yasf
         @options = args.extract_options!
 
         if block_given? && block.arity == 0
-          self.instance_eval &block
+          self.instance_eval(&block)
         else
           @callback = block
         end
