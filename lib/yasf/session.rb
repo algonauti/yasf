@@ -15,12 +15,12 @@ module Yasf
     private
 
     def setup_capybara_default_driver
-      Capybara.register_driver :poltergeist do |app|
+      Capybara.register_driver Yasf.config.capybara_driver do |app|
         Capybara::Poltergeist::Driver.new(
-          app, Yasf.config.poltergeist
+          app, Yasf.config.capybara_driver_options
         )
-      end
-      Capybara.default_driver = :poltergeist
+      end if Yasf.config.capybara_driver_options
+      Capybara.default_driver = Yasf.config.capybara_driver
     end
   end
 end

@@ -15,6 +15,8 @@ RSpec.configure do |config|
       config.proxy_port = '2424'
       config.proxy_host = '127.0.0.1'
       config.timeout = 60
+      config.capybara_driver = :poltergeist
+      config.capybara_driver_options = config.poltergeist_options
     end
   end
 
