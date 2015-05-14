@@ -8,19 +8,19 @@ module Yasf
     config_accessor :debug
 
     def poltergeist
-      default_options = {
+      options = {
         js_errors: false,
         debug: false,
         inspector: false,
         timeout: timeout || 20
       }
 
-      default_options.merge!(
+      options.merge!(
         logger: NullLogger.new,
         phantomjs_logger: NullLogger.new
-      ) unless debug
+      ) unless debug?
 
-      default_options.merge!(
+      options.merge!(
         phantomjs_options: [
           '--ignore-ssl-errors=yes',
           "--proxy=#{proxy_host}:#{proxy_port}",
@@ -30,6 +30,11 @@ module Yasf
         ]
       ) if proxy?
 
+      return options
+    end
+
+    def debug?
+      !!debug
     end
 
     def proxy?
