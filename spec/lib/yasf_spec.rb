@@ -9,7 +9,12 @@ describe Yasf do
   describe '#scrape', vcr: true do
 
     context 'wowebook' do
-      Given(:scraper) { Fakecrawler.new }
+      Given(:scraper) do
+        scraper = Fakecrawler.new
+        scraper.base_url 'http://www.wowebook.com'
+        scraper
+      end
+
       When(:result) { scraper.crawl }
 
       Then { expect(result.page_title).to eql('Wow! eBook › The best eBook site ever!') }

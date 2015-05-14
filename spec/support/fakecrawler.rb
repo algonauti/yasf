@@ -1,8 +1,6 @@
 class Fakecrawler
   include Yasf::Crawler
 
-  base_url "http://www.wowebook.com"
-
   property :page_title, xpath: '/html/head/title'
 
   collection :books, xpath: '//*[@id="content"]/div/article' do
